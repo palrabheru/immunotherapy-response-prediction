@@ -216,3 +216,27 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# ----------------------------
+# Project-specific ignores
+# ----------------------------
+
+# Raw datasets (can be downloaded again)
+data/raw/*
+
+# Processed datasets
+data/processed/*
+
+# Keep folder structure
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Generated results
+results/*.csv
+results/*.xlsx
+results/*.tsv
+
+# Generated figures (optional)
+# images/*.png
+# images/*.jpg
