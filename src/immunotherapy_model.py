@@ -57,7 +57,8 @@ def prepare_data(expression, clinical, sample_column, target_column, positive_la
 
 def make_demo(seed=42, n_samples=160, n_genes=120):
     """Create deterministic synthetic data for installation checks and tutorials."""
-    X, y = make_classification(n_samples=n_samples, n_features=n_genes, n_informative=14, n_redundant=8, weights=[.65, .35], class_sep=1.1, random_state=seed)
+    informative = min(14, max(2, n_genes // 2)); redundant = min(8, max(0, n_genes - informative - 1))
+    X, y = make_classification(n_samples=n_samples, n_features=n_genes, n_informative=informative, n_redundant=redundant, weights=[.65, .35], class_sep=1.1, random_state=seed)
     return pd.DataFrame(X, columns=[f"GENE_{i:03d}" for i in range(n_genes)]), pd.Series(y), pd.Series([f"DEMO_{i:03d}" for i in range(n_samples)])
 
 def train_and_save(X, y, ids, output_dir, test_size=.25, k=50, seed=42):
