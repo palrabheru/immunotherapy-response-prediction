@@ -236,6 +236,7 @@ data/processed/*
 results/*.csv
 results/*.xlsx
 results/*.tsv
+outputs/
 
 # Generated figures (optional)
 # images/*.png
