@@ -245,3 +245,9 @@ The early notebook references GEO accession **GSE176307**. Its available metadat
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+## Portfolio review note
+
+**Current demonstration:** the versioned example uses synthetic data to verify the end-to-end software workflow. **Clinical status:** no external-cohort predictive validity should be inferred from synthetic examples. A meaningful translational extension would require a documented, appropriately licensed pretreatment cohort with compatible response labels, leakage-aware patient-level evaluation, and independent validation.
+
+If reviewing this repository for a research position, begin with the example figures, then run `python -m pytest -q` and the `--demo` command above. These are software verification steps, not evidence of medical utility.
